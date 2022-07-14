@@ -10,8 +10,6 @@ def is_mouth_open(face_landmarks):
 
     # if mouth is open more than lip height * ratio, return true.
     ratio = 0.5
-    print('top_lip_height: %.2f, bottom_lip_height: %.2f, mouth_height: %.2f, min*ratio: %.2f'
-          % (top_lip_height,bottom_lip_height,mouth_height, min(top_lip_height, bottom_lip_height) * ratio))
 
     if mouth_height > min(top_lip_height, bottom_lip_height) * ratio:
         return True
