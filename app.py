@@ -22,7 +22,7 @@ def start(keypress):
     while True:
         print('Running...')
         # Grab a single frame of video
-        ret, frame = video_capture.read();
+        ret, frame = video_capture.read()
 
         # Find all the faces and face enqcodings in the frame of video
         face_landmarks_list = face_recognition.face_landmarks(frame)
