@@ -15,6 +15,15 @@ def open_camera():
         cv2.rectangle(frame, (100, 100), (300, 300), (0, 255, 0), 0)
         threshold(frame)
 
+        show_gesture_window(frame)
+
+        # Close the camera if 'q' is pressed
+        if cv2.waitKey(1) == ord('q'):
+            break
+
+    capture.release()
+    cv2.destroyAllWindows()
+
 
 def threshold(frame):
     crop_image = frame[100:300, 100:300]
@@ -51,6 +60,7 @@ def find_contours(thresh, frame, crop_image):
 
         # Create bounding rectangle around the contour
         x, y, w, h = cv2.boundingRect(contour)
+
         cv2.rectangle(crop_image, (x, y), (x + w, y + h), (0, 0, 255), 0)
 
         # Find convex hull
@@ -91,7 +101,12 @@ def find_contours(thresh, frame, crop_image):
             pyautogui.press('space')
             cv2.putText(frame, "JUMP", (115, 80), cv2.FONT_HERSHEY_SIMPLEX, 2, 2, 2)
     finally:
-        print('Ok')
+        print('Program running...')
+
+
+def show_gesture_window(frame):
+    # Show required images
+    cv2.imshow("Gesture", frame)
 
 
 # Entrypoint function
