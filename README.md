@@ -1,5 +1,9 @@
 # 🦖Dinosaur
 
+Ever wanted to play [dino](https://chrome://dino) with your mouth? Now you can!
+Run the main `app.py` in this project and head right to the dino game to get started!
+
+
 To run the main aplication run `<python exec> app.py <key to press>`.
 \
 Examples:
