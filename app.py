@@ -30,6 +30,8 @@ def start(keypress):
 
         m_open = is_mouth_open(face_landmarks_list[0])
 
+        cv2.imshow('Video', frame)
+
         if (m_open and not mouth_open):
             mouth_open = m_open
             press(keypress)
